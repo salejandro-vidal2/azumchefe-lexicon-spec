@@ -1,0 +1,1 @@
+# azumchefe-dictionary-spec
