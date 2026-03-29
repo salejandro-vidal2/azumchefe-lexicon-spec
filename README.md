@@ -3,4 +3,4 @@ The XML-based Azumchefe Lexicon (abbreviated as ALex) file format stores lexicon
 
 This repository defines the standard for working with the format. It includes a schema file along with rule sets to read.
 
-See [SCHEMA.md](/SCHEMA.md) to learn the schema.
+See [SCHEMA.md](/SCHEMA.md) to learn the schema's structure.
