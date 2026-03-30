@@ -1,7 +1,7 @@
 # Schema
 ### Qualities of elements/attributes
-- required: this element/attribute is required.
-- indexed: this element/attribute is indexed.
+- required : this element/attribute is required.
+- indexed : this element/attribute is indexed.
 
 ## lexicon
 - required
