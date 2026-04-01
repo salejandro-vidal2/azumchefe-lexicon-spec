@@ -54,9 +54,9 @@ A lexical entry. It contains forms and senses.
   The language (ISO 639-3) of the lexical entry.
 ## refer (proposal_01042026)
 A reference to another lexical entry.
-  ### to
+  ### to (proposal_01042026)
   Where the reference leads to.
-  ### isExternal
+  ### isExternal (proposal_01042026)
   Does the reference redirect to external sources?
 
 ## form
