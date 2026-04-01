@@ -1,63 +1,107 @@
-# Schema
+# How to read this file?
+Some considerations before reading this file.
+### Comments
+Written in parenthesis next to the element/attribute's title.
+- deprecated : the element/attribute should not be used.
+- proposal_* : the element/attribute is proposed in proposal_*.
+
 ### Qualities of elements/attributes
-- required : this element/attribute is required.
-- indexed : this element/attribute is indexed.
+Written as a list below the element/attribute's title.
+- required : the element/attribute is required.
+- indexed : the element/attribute is key in indexation.
+
+### Other
+**Impl.** : implementation advice.
+
+# Schema
 
 ## lexicon
 - required
 
 The lexicon. It contains lexical entries.
-### label
-- required
-
-The label of the lexicon. (e.g. Oxford English Dictionary)
+  ### label
+  - required
+  
+  The label of the lexicon. (e.g. Oxford English Dictionary)
+  ### language (proposal_01042026)
+  - required
+  
+  The language (ISO 639-3) of the lexicon. (e.g. 'spa' meaning Spanish)
 ## lexical-entry
 - required
 
 A lexical entry. It contains forms and senses.
-### lemma
-- required
-- indexed : refers to itself (e.g. [lemma] = [lemma])
+  ### lemma
+  - required
+  - indexed
 
-The lemma (the canonical form) of the lexical entry.
-### language
-- required
+  The lemma (the canonical form) of the lexical entry.
 
-The language (ISO 639-3) of the lexical entry.
+  **Impl.**: It should be exposed in indexation; When queried, it should refer to itself (e.g. refer Key[lemma] to Value[lemma]).
+  ### etymology (proposal_01042026)
+  The etymology of the lexical entry.
+  ### editorialNote (proposal_01042026)
+  The editorial note of the lexical entry.
+
+  Used for notes left by editors. Can also be used as a 'one fits all' category.
+  ### language (deprecated) (proposal_01042026)
+  - required
+  
+  The language (ISO 639-3) of the lexical entry.
+## refer (proposal_01042026)
+A reference to another lexical entry.
+  ### to
+  Where the reference leads to.
+  ### isExternal
+  Does the reference redirect to external sources?
+
 ## form
-A form of the lexical entry.
-### type
+A form of the lexical entry. 
 
-The type of form. (Is it an alternative spelling?)
-### _text
-- required
-- indexed : refers to the lexical entry (e.g. [form] = [lemma])
+Forms are variations of a lemma (either phonetical or morphological). 
 
-The text content of the element.
+**Impl.**: It should be exposed in indexation; When queried, it should refer to its parent lemma (e.g. refer Key[form] to Value[parent-lemma]).
+
+  ### type
+  
+  The type of form. (e.g. Is it an alternative spelling?)
+  ### _text
+  - required
+  
+  The text content of the element.
 ## sense
 - required
 
 It contains definitions.
-### partOfSpeech
-- required
+  ### partOfSpeech
+  - required
 
-The part of speech of the sense.
-### editorialNote
+  The part of speech of the sense.
 
-An editorial note of the sense.
+  Denotes the use of the sense in speech.
+  ### restrictionMark (proposal_01042026)
+  The restricion mark of the sense. 
+  
+  Refers the use of the sense to a specific context or location. (e.g. 'bot' meaning _Bot._ [Botany])
+  ### editorialNote
+  The editorial note of the sense.
+
+  Used for notes left by editors. Can also be used as a 'one fits all' category.
 ## definition
 - required
 
 A definition. It contains examples.
-### editorialNote
-An editorial note of the definition.
-### _text
-- required
+  ### editorialNote
+  The editorial note of the definition.
 
-The text content of the element.
+  Used for notes left by editors. Can also be used as a 'one fits all' category.
+  ### _text
+  - required
+  
+  The text content of the element.
 ## example
 An example/quote.
-### author
+  ### author
 
 The author of the quote.
 ### _text
