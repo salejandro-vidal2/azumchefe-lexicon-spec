@@ -75,10 +75,14 @@ When not present, this lexical entry would be considered an empty lexical entry,
   The part of speech of the sense.
 
   Denotes the use of the sense in speech.
+  ### geographicalMark (proposal_07042026)
+  The geographical mark of the sense.
+
+  Refers the use of the sense to a specific geographical location.
   ### restrictionMark
   The restricion mark of the sense. 
   
-  Refers the use of the sense to a specific context or location. (e.g. 'bot' meaning _Bot._ [Botany])
+  Refers the use of the sense to a specific context. (e.g. 'bot' meaning _Bot._ [Botany])
   ### editorialNote
   The editorial note of the sense.
 
