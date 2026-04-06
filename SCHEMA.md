@@ -23,11 +23,11 @@ The lexicon. It contains lexical entries.
   - required
   
   The label of the lexicon. (e.g. Oxford English Dictionary)
-  ### language (proposal_01042026)
+  ### language
   - required
   
   The language (ISO 639-3) of the lexicon. (e.g. 'spa' meaning Spanish)
-  ### alphabetOrder (proposal_01042026)
+  ### alphabetOrder (proposal_06042026)
   The order of the alphabetic letters in index. 
 
   Describes the alphabet order in index. If not present, will just use the traditional latin order.
@@ -42,21 +42,17 @@ A lexical entry. It contains forms and senses.
   The lemma (the canonical form) of the lexical entry.
 
   **Impl.**: It should be exposed in indexation; When queried, it should refer to itself (e.g. refer Key[lemma] to Value[lemma]).
-  ### etymology (proposal_01042026)
+  ### etymology
   The etymology of the lexical entry.
-  ### editorialNote (proposal_01042026)
+  ### editorialNote
   The editorial note of the lexical entry.
 
   Used for notes left by editors. Can also be used as a 'one fits all' category.
-  ### language (deprecated) (proposal_01042026)
-  - required
-  
-  The language (ISO 639-3) of the lexical entry.
-## refer (proposal_01042026)
+## refer
 A reference to another lexical entry.
-  ### to (proposal_01042026)
+  ### to
   Where the reference leads to.
-  ### isExternal (proposal_01042026)
+  ### isExternal
   Does the reference redirect to external sources?
 
 ## form
@@ -83,7 +79,7 @@ It contains definitions.
   The part of speech of the sense.
 
   Denotes the use of the sense in speech.
-  ### restrictionMark (proposal_01042026)
+  ### restrictionMark
   The restricion mark of the sense. 
   
   Refers the use of the sense to a specific context or location. (e.g. 'bot' meaning _Bot._ [Botany])
