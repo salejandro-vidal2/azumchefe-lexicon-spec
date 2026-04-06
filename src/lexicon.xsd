@@ -10,6 +10,13 @@
                     <xs:complexType>
 
                         <xs:sequence>
+                            <xs:element name="refer" minOccurs="0" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:attribute name="to" type="xs:string"/>
+                                    <xs:attribute name="isExternal" type="xs:boolean"/>
+                                </xs:complexType>
+                            </xs:element>
+                            
                             <xs:element name="form" minOccurs="0" maxOccurs="unbounded">
                                 <xs:complexType>
                                     <xs:simpleContent>
@@ -20,7 +27,7 @@
                                 </xs:complexType>
                             </xs:element>
                             
-                            <xs:element name="sense" maxOccurs="unbounded">
+                            <xs:element name="sense" minOcurrs="0" maxOccurs="unbounded">
                                 <xs:complexType>
 
                                     <xs:sequence>
@@ -45,18 +52,21 @@
                                     </xs:sequence>
                                     
                                     <xs:attribute name="partOfSpeech" type="xs:string" use="required"/>
+                                    <xs:attribute name="restrictionMark" type="xs:string"/>
                                     <xs:attribute name="editorialNote" type="xs:string"/>
                                 </xs:complexType>
                             </xs:element>
                         </xs:sequence>
 
                         <xs:attribute name="lemma" type="xs:string" use="required"/>
-                        <xs:attribute name="language" type="xs:string" use="required"/>
+                        <xs:attribute name="etymology" type="xs:string"/>
+                        <xs:attribute name="editorialNote" type="xs:string"/>
                     </xs:complexType>
                 </xs:element>
             </xs:sequence>
             
             <xs:attribute name="label" type="xs:string" use="required"/>
+            <xs:attribute name="language" type="xs:string" use="required"/>
         </xs:complexType>
     </xs:element>
 
