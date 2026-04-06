@@ -27,10 +27,6 @@ The lexicon. It contains lexical entries.
   - required
   
   The language (ISO 639-3) of the lexicon. (e.g. 'spa' meaning Spanish)
-  ### alphabetOrder (proposal_06042026)
-  The order of the alphabetic letters in index. 
-
-  Describes the alphabet order in index. If not present, will just use the traditional latin order.
 ## lexical-entry
 - required
 
