@@ -70,9 +70,9 @@ Forms are variations of a lemma (either phonetical or morphological).
   
   The text content of the element.
 ## sense
-- required
-
 It contains definitions.
+
+When not present, this lexical entry would be considered an empty lexical entry, and thus should include a refer element.
   ### partOfSpeech
   - required
 
